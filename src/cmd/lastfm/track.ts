@@ -7,14 +7,14 @@ export const cmd: Command = {
     description: "Show Last.fm user's recent track",
     async run(ctx: Ctx) {
         const user = await getLastFmUser(ctx)
-        if (!user) return
+        if (!user) return await ctx.reply("Cannot find that user.", withReply(ctx))
         const msgToBeEdited = await ctx.reply(`<i>Getting ${user}'s tracks...</i>`, withHTMLmarkdown())
 
         const userRecenttrack = await bot.lastfm!.getRecentTracks(user.toString())
 
         let result: string = `<b>${user}</b>'s latest track\n\n`
         if (!userRecenttrack?.track || userRecenttrack.track.length < 1) {
-            result += "No tracks scrobbed."
+            result += "No tracks scrobbled."
         } else {
             for (const track of userRecenttrack.track) {
                 if (track['@attr']?.nowplaying) {

@@ -7,7 +7,7 @@ export const cmd: Command = {
     description: "Show Last.fm scrobbles",
     async run(ctx) {
         const user = await getLastFmUser(ctx)
-        if (!user) return
+        if (!user) return await ctx.reply("Cannot find that user", withReply(ctx))
 
         const msgToBeEdited = await ctx.reply(`<i>Getting ${user}'s info...</i>`, withHTMLmarkdown())
 
