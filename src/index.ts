@@ -19,7 +19,7 @@ bot.start({
     }
 })
 // Every day at 8:00 am
-schedule("* 0 8 * * *", async () => {
+schedule("0 0 8 * * *", async () => {
 
     const diff = wieeeee.diffNow(["days", "hours", "minutes", "seconds"])
 
@@ -28,4 +28,4 @@ schedule("* 0 8 * * *", async () => {
     `
     await bot.api.sendMessage(channelId, reply, withHTMLmarkdown());
 
-}, { timezone: "Europe/Berlin" })
+})
