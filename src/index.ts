@@ -71,14 +71,3 @@ bot.on("inline_query", async ctx => {
     }
 })
 
-// Every day at 8:00 am
-schedule("0 0 8 * * *", async () => {
-
-    const diff = wieeeee.diffNow(["days", "hours", "minutes", "seconds"])
-
-    const reply = `
-    <b>${diff.toHuman({ listStyle: "long", unitDisplay: "short" })}</b> left until aleks and ralu become <b>truly</b> together :3
-    `
-    await bot.api.sendMessage(channelId, reply, withHTMLmarkdown());
-
-})
