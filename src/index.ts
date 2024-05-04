@@ -1,11 +1,8 @@
 import 'dotenv/config';
 import { bot } from "./lib/Bot";
-import { schedule } from "node-cron"
-import { wieeeee } from './const';
 import { withHTMLmarkdown } from './lib/utils';
 import { InlineQueryResultBuilder } from 'grammy';
 
-const channelId = "-1002117460117";
 
 bot.start({
     onStart: async (botinfo) => {
