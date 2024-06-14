@@ -14,8 +14,8 @@ export const cmd: Command = {
         }
         if (Number.isNaN(arg)) {
             arg = 32;
-        } else if (arg > 128) {
-            arg = 128;
+        } else if (arg > 500) {
+            arg = 500;
         } else if (arg < 1) {
             arg = 1;
         }

@@ -5,6 +5,5 @@ export function randomChar(length: number) {
         const char = String.fromCodePoint(unicode_latin)
         chars.push(char);
     }
-
     return Buffer.from(chars.join(""), "utf-8").toString();
 }
