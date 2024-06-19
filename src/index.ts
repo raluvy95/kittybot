@@ -2,7 +2,10 @@ import 'dotenv/config';
 import { bot } from "./lib/Bot";
 import { withHTMLmarkdown } from './lib/utils';
 import { InlineQueryResultBuilder } from 'grammy';
+import { wieeeee } from './const';
+import { schedule } from "node-cron"
 
+const channelId = "-1002117460117";
 
 bot.start({
     onStart: async (botinfo) => {
@@ -68,3 +71,18 @@ bot.on("inline_query", async ctx => {
     }
 })
 
+// Every day at 8:00 am
+schedule("0 0 8 * * *", async () => {
+
+    const diff = wieeeee.diffNow(["days", "hours", "minutes", "seconds"])
+
+    if (diff.hours < 0) {
+        return;
+    }
+
+    const reply = `
+    <b>${diff.toHuman({ listStyle: "long", unitDisplay: "short" })}</b> left until aleks and ralu become <b>truly</b> together :3
+    `
+    await bot.api.sendMessage(channelId, reply, withHTMLmarkdown());
+
+})

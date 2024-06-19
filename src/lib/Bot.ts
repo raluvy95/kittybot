@@ -5,7 +5,6 @@ import { LastFM } from "./LastFM";
 import { autoRetry } from "@grammyjs/auto-retry";
 import { limit } from "@grammyjs/ratelimiter";
 import { QuickDB } from "quick.db";
-import { UserStorage } from "../const";
 import { hydrate, HydrateFlavor } from "@grammyjs/hydrate";
 import { getAuthorId } from "./utils";
 
@@ -82,7 +81,6 @@ export class MeowBot extends Bot<Ctx> {
         if (!command) {
             return;
         }
-        console.log(getAuthorId(ctx))
 
         await command.run(ctx);
     }

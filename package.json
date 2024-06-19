@@ -1,13 +1,13 @@
 {
   "dependencies": {
-    "@grammyjs/auto-retry": "^1.1.1",
+    "@grammyjs/auto-retry": "^2.0.1",
     "@grammyjs/hydrate": "^1.4.1",
     "@grammyjs/ratelimiter": "^1.2.0",
     "@grammyjs/storage-typeorm": "^2.4.2",
     "@types/luxon": "^3.4.2",
     "better-sqlite3": "^9.4.3",
     "dotenv": "^16.4.1",
-    "grammy": "^1.20.3",
+    "grammy": "^1.25.0",
     "luxon": "^3.4.4",
     "node-cron": "^3.0.3",
     "quick.db": "^9.1.7",
