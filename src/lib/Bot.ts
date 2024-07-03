@@ -81,7 +81,6 @@ export class MeowBot extends Bot<Ctx> {
         if (!command) {
             return;
         }
-
         await command.run(ctx);
     }
 
