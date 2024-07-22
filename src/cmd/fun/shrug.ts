@@ -3,7 +3,7 @@ import { Command } from "../../types";
 
 export const cmd: Command = {
     name: "shrug",
-    description: "I miss /shrug command from discord, im making it real",
+    description: "I miss /shrug command from discord. Inline reply exists",
     async run(ctx: Context) {
         await ctx.reply("¯\\_(ツ)_/¯")
     },
